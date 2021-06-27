@@ -31,13 +31,13 @@ c_vector c_vector_init() ;
 /** c_vector_copy function, copies contents of a given c_vector. 
   * @param const pointer to c_vector
   * @return copy of given c_vector **/
-c_vector c_vector_copy(const c_vector* cpVec)
+c_vector c_vector_copy(const c_vector*) ;
 
 /** c_vector_fini function, frees data held by provided c_vector
   * @param pointer to c_vector **/
-void c_vector_fini(c_vector* vec)
+void c_vector_fini(c_vector*) ;
 
-c_vector c_vector_init() ;
+c_vector c_vector_init()
 {
 	c_vector vec ;
 	vec.data = NULL ;
@@ -77,10 +77,12 @@ c_vector c_vector_copy(const c_vector* cpVec)
 
 void c_vector_fini(c_vector* vec)
 {
-	if(vec->data) 
+	if(vec->data != NULL) 
 	{
 		free(vec->data) ;
 		vec->data = NULL ;
+		vec->size = 0 ;
+		vec->bytes = 0 ;
 	}
 }
 
