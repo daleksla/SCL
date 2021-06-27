@@ -1,0 +1,13 @@
+name: GCC #give this pipeline an actual name
+on: push
+jobs:
+  C:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install gcc compiler
+        run: sudo apt-get install g++-10
+      - name: Build targets using compiler
+        run: |
+          cd ./.testing/
+          make -f Makefile COMP=gcc
