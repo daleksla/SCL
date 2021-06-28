@@ -11,7 +11,6 @@ int list_init_test(void)
 {
 	list l = list_init() ;
 	CHECK_TRUE(l.size == 0) ;
-	CHECK_TRUE(l.bytes == 0) ;
 	CHECK_TRUE(l.head == NULL) ;
 	CHECK_TRUE(l.tail == NULL) ;
 	list_fini(&l) ;
@@ -40,15 +39,15 @@ int list_fini_test(void)
 	list l = list_init() ;
 	list_fini(&l) ; 
 	CHECK_TRUE(l.size == 0) ;
-	CHECK_TRUE(l.bytes == 0) ;
-	CHECK_TRUE(l.data == NULL) ;
+	CHECK_TRUE(l.head == NULL) ;
+	CHECK_TRUE(l.tail == NULL) ;
 	int i = 1 ;
 	list* pL = &l ;
 	list_append(pL, i) ; // so container actually stores data
 	list_fini(&l) ; 
 	CHECK_TRUE(l.size == 0) ;
-	CHECK_TRUE(l.bytes == 0) ;
-	CHECK_TRUE(l.data == NULL) ;
+	CHECK_TRUE(l.head == NULL) ;
+	CHECK_TRUE(l.tail == NULL) ;
 	return 0 ;
 }
 
