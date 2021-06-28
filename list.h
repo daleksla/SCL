@@ -20,9 +20,9 @@ typedef struct {
 	/** list struct, contains properties pertaining to doubly linked list **/
 	unsigned long size ; // amounts of items of data
 	
-	struct d_node* head ; // stores link to next node in linked list
+	struct d_node* head ; // stores link to first node in linked list
 	
-	struct d_node* tail ; // stores link to previous node in linked list
+	struct d_node* tail ; // stores link to last node in linked list
 
 } list ;
 
