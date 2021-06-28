@@ -11,7 +11,8 @@ int string_init_test(void)
 {
 	string str = string_init() ;
 	CHECK_TRUE(str.size == 0) ;
-	CHECK_TRUE(str.data == NULL) ;
+	CHECK_TRUE(str.data[0] == 0) ;
+	CHECK_TRUE(str.data != NULL) ;
 	string_fini(&str) ;
 	return 0 ;
 }
