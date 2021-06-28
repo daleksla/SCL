@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec_11',['vec',['../c__vector_8h.html#a8cc824eee0676fd57ce67a15d4c08e8f',1,'c_vector.h']]]
+  ['prev_13',['prev',['../structd__node.html#a060d22b4644eb628f38db447c84bd69f',1,'d_node']]]
 ];

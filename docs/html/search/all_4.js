@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['scl_9',['SCL',['../index.html',1,'']]],
-  ['size_10',['size',['../structc__vector.html#a144e129d1b9a427af74beb5aabfe5b5b',1,'c_vector']]]
+  ['next_12',['next',['../structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951',1,'d_node']]]
 ];

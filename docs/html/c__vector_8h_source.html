@@ -115,41 +115,41 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> vec ;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="c__vector_8h.html#a6a5dfd242abcbd88fb37a4d67f739372">   65</a></span>&#160;<span class="preprocessor">#define c_vector_append(vec, item) ({\</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">    unsigned long bytes = sizeof(item) ;\</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">    </span><span class="comment">/* then, allocate more memory accordingly, copy the data over, add new data, delete old location */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">    void* newVecData = malloc(vec-&gt;bytes+bytes) ;\</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">    memset(newVecData, 0, vec-&gt;bytes+bytes) ; </span><span class="comment">/* there has to be a better alternative to avoid valgrinds message */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">    memcpy(newVecData, vec-&gt;data, vec-&gt;bytes) ;\</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">    free(vec-&gt;data) ; </span><span class="comment">/* delete the old bit of data */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    vec-&gt;data = newVecData ; </span><span class="comment">/* assign vector new memory location */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    ((char*)vec-&gt;data)[vec-&gt;bytes] = item ;\</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">    vec-&gt;bytes += bytes ;\</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">    ++vec-&gt;size ;\</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">})</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5">c_vector_fini</a>(<a class="code" href="structc__vector.html">c_vector</a>* vec)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(vec-&gt;<a class="code" href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">data</a> != NULL) </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        free(vec-&gt;<a class="code" href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">data</a>) ;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        vec-&gt;<a class="code" href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">data</a> = NULL ;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        vec-&gt;<a class="code" href="structc__vector.html#a144e129d1b9a427af74beb5aabfe5b5b">size</a> = 0 ;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        vec-&gt;<a class="code" href="structc__vector.html#a63aa158f887d6fe284791eaac847c1d9">bytes</a> = 0 ;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifdef __cplusplus </span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// &quot;C++&quot;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif // __cplusplus</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // C_VECTOR_H</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="c__vector_8h.html#a6a5dfd242abcbd88fb37a4d67f739372">   68</a></span>&#160;<span class="preprocessor">#define c_vector_append(vec, item) ({\</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">    unsigned long bytes = sizeof(item) ;\</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">    </span><span class="comment">/* then, allocate more memory accordingly, copy the data over, add new data, delete old location */</span><span class="preprocessor">\</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">    void* newVecData = malloc(vec-&gt;bytes+bytes) ;\</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    memset(newVecData, 0, vec-&gt;bytes+bytes) ; </span><span class="comment">/* there has to be a better alternative to avoid valgrinds message */</span><span class="preprocessor">\</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    memcpy(newVecData, vec-&gt;data, vec-&gt;bytes) ;\</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">    free(vec-&gt;data) ; </span><span class="comment">/* delete the old bit of data */</span><span class="preprocessor">\</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">    vec-&gt;data = newVecData ; </span><span class="comment">/* assign vector new memory location */</span><span class="preprocessor">\</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">    ((char*)vec-&gt;data)[vec-&gt;bytes] = item ;\</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">    vec-&gt;bytes += bytes ;\</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">    ++vec-&gt;size ;\</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">})</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5">c_vector_fini</a>(<a class="code" href="structc__vector.html">c_vector</a>* vec)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span>(vec-&gt;<a class="code" href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">data</a> != NULL) </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        free(vec-&gt;<a class="code" href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">data</a>) ;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        vec-&gt;<a class="code" href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">data</a> = NULL ;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        vec-&gt;<a class="code" href="structc__vector.html#a144e129d1b9a427af74beb5aabfe5b5b">size</a> = 0 ;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        vec-&gt;<a class="code" href="structc__vector.html#a63aa158f887d6fe284791eaac847c1d9">bytes</a> = 0 ;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifdef __cplusplus </span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// &quot;C++&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif // __cplusplus</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif // C_VECTOR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructc__vector_html_a63aa158f887d6fe284791eaac847c1d9"><div class="ttname"><a href="structc__vector.html#a63aa158f887d6fe284791eaac847c1d9">c_vector::bytes</a></div><div class="ttdeci">unsigned long bytes</div><div class="ttdef"><b>Definition:</b> c_vector.h:22</div></div>
 <div class="ttc" id="ac__vector_8h_html_abc0885d91c17483e6a4a03ece9b234ce"><div class="ttname"><a href="c__vector_8h.html#abc0885d91c17483e6a4a03ece9b234ce">c_vector_init</a></div><div class="ttdeci">c_vector c_vector_init()</div><div class="ttdef"><b>Definition:</b> c_vector.h:40</div></div>
 <div class="ttc" id="ac__vector_8h_html_a3adf8e8f3b3dc441df3da82010a42f8e"><div class="ttname"><a href="c__vector_8h.html#a3adf8e8f3b3dc441df3da82010a42f8e">c_vector_copy</a></div><div class="ttdeci">c_vector c_vector_copy(const c_vector *)</div><div class="ttdef"><b>Definition:</b> c_vector.h:49</div></div>
 <div class="ttc" id="astructc__vector_html_a144e129d1b9a427af74beb5aabfe5b5b"><div class="ttname"><a href="structc__vector.html#a144e129d1b9a427af74beb5aabfe5b5b">c_vector::size</a></div><div class="ttdeci">unsigned long size</div><div class="ttdef"><b>Definition:</b> c_vector.h:23</div></div>
-<div class="ttc" id="ac__vector_8h_html_a92d6c7635cad4a0e8ca527744f7c29c5"><div class="ttname"><a href="c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5">c_vector_fini</a></div><div class="ttdeci">void c_vector_fini(c_vector *)</div><div class="ttdef"><b>Definition:</b> c_vector.h:78</div></div>
+<div class="ttc" id="ac__vector_8h_html_a92d6c7635cad4a0e8ca527744f7c29c5"><div class="ttname"><a href="c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5">c_vector_fini</a></div><div class="ttdeci">void c_vector_fini(c_vector *)</div><div class="ttdef"><b>Definition:</b> c_vector.h:81</div></div>
 <div class="ttc" id="astructc__vector_html_a2354a571a2293664b04b4d5267ed68d7"><div class="ttname"><a href="structc__vector.html#a2354a571a2293664b04b4d5267ed68d7">c_vector::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> c_vector.h:21</div></div>
 <div class="ttc" id="astructc__vector_html"><div class="ttname"><a href="structc__vector.html">c_vector</a></div><div class="ttdoc">Vector structure &amp; functionality to support dynamically allocated arrays.</div><div class="ttdef"><b>Definition:</b> c_vector.h:18</div></div>
 <!-- start footer part -->

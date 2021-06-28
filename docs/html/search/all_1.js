@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['c_5fvector_1',['c_vector',['../structc__vector.html',1,'']]],
-  ['c_5fvector_2eh_2',['c_vector.h',['../c__vector_8h.html',1,'']]],
-  ['c_5fvector_5fappend_3',['c_vector_append',['../c__vector_8h.html#a6a5dfd242abcbd88fb37a4d67f739372',1,'c_vector.h']]],
-  ['c_5fvector_5fcopy_4',['c_vector_copy',['../c__vector_8h.html#a3adf8e8f3b3dc441df3da82010a42f8e',1,'c_vector.h']]],
-  ['c_5fvector_5ffini_5',['c_vector_fini',['../c__vector_8h.html#a92d6c7635cad4a0e8ca527744f7c29c5',1,'c_vector.h']]],
-  ['c_5fvector_5finit_6',['c_vector_init',['../c__vector_8h.html#abc0885d91c17483e6a4a03ece9b234ce',1,'c_vector.h']]]
+  ['d_5fnode_1',['d_node',['../structd__node.html',1,'d_node'],['../d__node_8h.html#a29a46ef8a3b8652b51afedf8165037b4',1,'d_node():&#160;d_node.h']]],
+  ['d_5fnode_2eh_2',['d_node.h',['../d__node_8h.html',1,'']]],
+  ['d_5fnode_5finit_3',['d_node_init',['../d__node_8h.html#a33445d2849f197d92cc3f08b332f843a',1,'d_node.h']]],
+  ['data_4',['data',['../structd__node.html#aef9128365f4dc1b1d165a35249fcb3ef',1,'d_node::data()'],['../structstring.html#a564b9699a5589f0c91d57aafa3266036',1,'string::data()'],['../structvector.html#afee87fd86bbabb017991064293317a8b',1,'vector::data()']]]
 ];
