@@ -14,5 +14,8 @@ all:
 	#testing list
 	$(COMP) $(WARN) $(SOURCES)/listTest.c -o $(EXES)/listTest
 	
+	#testing fwd_list
+	$(COMP) $(WARN) $(SOURCES)/fwdListTest.c -o $(EXES)/fwdListTest
+		
 	#testing string
 	$(COMP) $(WARN) $(SOURCES)/stringTest.c -o $(EXES)/stringTest
