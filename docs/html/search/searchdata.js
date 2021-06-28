@@ -1,12 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "bdhlnprstv",
-  1: "dlsv",
-  2: "dlrsv",
-  3: "dlsv",
+  0: "bdfhlnprstv",
+  1: "dflsv",
+  2: "dflrsv",
+  3: "dflsv",
   4: "bdhnpst",
-  5: "d",
-  6: "lv",
+  5: "ds",
+  6: "flv",
   7: "s"
 };
 

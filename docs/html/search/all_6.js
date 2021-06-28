@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme_2emd_14',['README.md',['../README_8md.html',1,'']]]
+  ['prev_19',['prev',['../structd__node.html#a060d22b4644eb628f38db447c84bd69f',1,'d_node']]]
 ];

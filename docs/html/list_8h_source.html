@@ -81,100 +81,94 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structlist.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">   21</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> ; <span class="comment">// amounts of items of data</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structlist.html#a91d59e60c64e2d6fd130529bdb879604">   23</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="structlist.html#a91d59e60c64e2d6fd130529bdb879604">bytes</a> ; <span class="comment">// amount of bytes allocated (needed for memory management of generic type)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">   23</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* <a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> ; <span class="comment">// stores link to first node in linked list</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">   25</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* <a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> ; <span class="comment">// stores link to next node in linked list</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">   27</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* <a class="code" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">tail</a> ; <span class="comment">// stores link to previous node in linked list</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">   25</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* <a class="code" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">tail</a> ; <span class="comment">// stores link to last node in linked list</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <a class="code" href="structlist.html">list</a> ;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <a class="code" href="structlist.html">list</a> ;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a>(<span class="keywordtype">void</span>) ;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">list_copy</a>(<span class="keyword">const</span> <a class="code" href="structlist.html">list</a>*) ;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="list_8h.html#a5d89b83da0c979c966fc65c80f072ce0">   43</a></span>&#160;<span class="preprocessor">#define list_append(qwerty_x_list_l_abcd, qwerty_x_data_l_abcd) ({\</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    </span><span class="comment">/* initialise node &amp; set its data */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">    d_node* pNode = (d_node*)malloc(sizeof(d_node)) ;\</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    *pNode = d_node_init() ;\</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    pNode-&gt;data = (void*)&amp;qwerty_x_data_l_abcd ;\</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">    </span><span class="comment">/* check where it belongs */</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">    if(qwerty_x_list_l_abcd-&gt;size == 0)\</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">    {\</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;head = pNode ;\</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;tail = pNode ;\</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">    }\</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">    else {\</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;tail-&gt;next = pNode ;\</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;tail = pNode ;\</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    }\</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    ++qwerty_x_list_l_abcd-&gt;size ;\</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">    qwerty_x_list_l_abcd-&gt;bytes += sizeof(d_node) ;\</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">})</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">list_fini</a>(<a class="code" href="structlist.html">list</a>*) ;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">   66</a></span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="structlist.html">list</a> myList ;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    myList.<a class="code" href="structlist.html#a91d59e60c64e2d6fd130529bdb879604">bytes</a> = 0 ;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    myList.<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> = 0 ;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    myList.<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> = NULL ;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    myList.<a class="code" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">tail</a> = NULL ;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> myList ;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">   76</a></span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">list_copy</a>(<span class="keyword">const</span> <a class="code" href="structlist.html">list</a>* i_list)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="structlist.html">list</a> myList = <a class="code" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a>() ;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span>(i_list-&gt;<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> == 0) <span class="keywordflow">return</span> myList ;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* otherNode = i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> ;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structlist.html">list</a>* pList = &amp;myList ;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0 ; i &lt; i_list-&gt;<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> ; ++i)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="list_8h.html#a5d89b83da0c979c966fc65c80f072ce0">list_append</a>(pList, otherNode-&gt;<a class="code" href="structd__node.html#aef9128365f4dc1b1d165a35249fcb3ef">data</a>) ;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        otherNode = otherNode-&gt;<a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> ;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> myList ;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">   90</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">list_fini</a>(<a class="code" href="structlist.html">list</a>* i_list)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> != NULL)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* cur = i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> ;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* <a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> = NULL ;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">while</span>(cur != NULL)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> = cur-&gt;<a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> ;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            free(cur) ;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            cur = <a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> ;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#a91d59e60c64e2d6fd130529bdb879604">bytes</a> = 0 ;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> = 0 ;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> = NULL ;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">tail</a> = NULL ;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#ifdef __cplusplus </span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <span class="comment">// &quot;C++&quot;</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif // __cplusplus</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // LIST_H</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a>(<span class="keywordtype">void</span>) ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">list_copy</a>(<span class="keyword">const</span> <a class="code" href="structlist.html">list</a>*) ;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="list_8h.html#a5d89b83da0c979c966fc65c80f072ce0">   41</a></span>&#160;<span class="preprocessor">#define list_append(qwerty_x_list_l_abcd, qwerty_x_data_l_abcd) ({\</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">    </span><span class="comment">/* initialise node &amp; set its data */</span><span class="preprocessor">\</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    d_node* pNode = (d_node*)malloc(sizeof(d_node)) ;\</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    *pNode = d_node_init() ;\</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">    pNode-&gt;data = (void*)&amp;qwerty_x_data_l_abcd ;\</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    </span><span class="comment">/* check where it belongs */</span><span class="preprocessor">\</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    if(qwerty_x_list_l_abcd-&gt;size == 0)\</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">    {\</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;head = pNode ;\</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;tail = pNode ;\</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    }\</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">    else {\</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;tail-&gt;next = pNode ;\</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">        qwerty_x_list_l_abcd-&gt;tail = pNode ;\</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">    }\</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">    ++qwerty_x_list_l_abcd-&gt;size ;\</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">})</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">list_fini</a>(<a class="code" href="structlist.html">list</a>*) ;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">   63</a></span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="structlist.html">list</a> myList ;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    myList.<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> = 0 ;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    myList.<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> = NULL ;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    myList.<a class="code" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">tail</a> = NULL ;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> myList ;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">   72</a></span>&#160;<a class="code" href="structlist.html">list</a> <a class="code" href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">list_copy</a>(<span class="keyword">const</span> <a class="code" href="structlist.html">list</a>* i_list)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="structlist.html">list</a> myList = <a class="code" href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a>() ;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span>(i_list-&gt;<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> == 0) <span class="keywordflow">return</span> myList ;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* otherNode = i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> ;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="structlist.html">list</a>* pList = &amp;myList ;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0 ; i &lt; i_list-&gt;<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> ; ++i)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="list_8h.html#a5d89b83da0c979c966fc65c80f072ce0">list_append</a>(pList, otherNode-&gt;<a class="code" href="structd__node.html#aef9128365f4dc1b1d165a35249fcb3ef">data</a>) ;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        otherNode = otherNode-&gt;<a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> ;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> myList ;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">list_fini</a>(<a class="code" href="structlist.html">list</a>* i_list)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span>(i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> != NULL)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* cur = i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> ;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">struct </span><a class="code" href="structd__node.html">d_node</a>* <a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> = NULL ;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">while</span>(cur != NULL)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> = cur-&gt;<a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> ;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            free(cur) ;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            cur = <a class="code" href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">next</a> ;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">size</a> = 0 ;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">head</a> = NULL ;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        i_list-&gt;<a class="code" href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">tail</a> = NULL ;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#ifdef __cplusplus </span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;} <span class="comment">// &quot;C++&quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif // __cplusplus</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif // LIST_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructd__node_html_aef9128365f4dc1b1d165a35249fcb3ef"><div class="ttname"><a href="structd__node.html#aef9128365f4dc1b1d165a35249fcb3ef">d_node::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> d_node.h:19</div></div>
 <div class="ttc" id="astructd__node_html_a45fb52a5c643a4a33b7a6d8e1a51d951"><div class="ttname"><a href="structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951">d_node::next</a></div><div class="ttdeci">struct d_node * next</div><div class="ttdef"><b>Definition:</b> d_node.h:21</div></div>
-<div class="ttc" id="astructlist_html_a8cdca478dbc97ab5a9e0fcf11b810031"><div class="ttname"><a href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">list::head</a></div><div class="ttdeci">struct d_node * head</div><div class="ttdef"><b>Definition:</b> list.h:25</div></div>
+<div class="ttc" id="astructlist_html_a8cdca478dbc97ab5a9e0fcf11b810031"><div class="ttname"><a href="structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031">list::head</a></div><div class="ttdeci">struct d_node * head</div><div class="ttdef"><b>Definition:</b> list.h:23</div></div>
 <div class="ttc" id="astring_8h_html"><div class="ttname"><a href="string_8h.html">string.h</a></div></div>
-<div class="ttc" id="astructlist_html_a91d59e60c64e2d6fd130529bdb879604"><div class="ttname"><a href="structlist.html#a91d59e60c64e2d6fd130529bdb879604">list::bytes</a></div><div class="ttdeci">unsigned long bytes</div><div class="ttdef"><b>Definition:</b> list.h:23</div></div>
 <div class="ttc" id="astructlist_html_a992770f7058741bbc96f88d355f4b6b4"><div class="ttname"><a href="structlist.html#a992770f7058741bbc96f88d355f4b6b4">list::size</a></div><div class="ttdeci">unsigned long size</div><div class="ttdef"><b>Definition:</b> list.h:21</div></div>
 <div class="ttc" id="astructd__node_html"><div class="ttname"><a href="structd__node.html">d_node</a></div><div class="ttdoc">Doubly linked node structure &amp; functionality. FOR INTERNAL USAGE ONLY.</div><div class="ttdef"><b>Definition:</b> d_node.h:17</div></div>
-<div class="ttc" id="astructlist_html_ac23ef99fe784d5cc399c3daf54fb6932"><div class="ttname"><a href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">list::tail</a></div><div class="ttdeci">struct d_node * tail</div><div class="ttdef"><b>Definition:</b> list.h:27</div></div>
-<div class="ttc" id="alist_8h_html_a7bdcd7943db9bd4ae61b6c462d1b76c7"><div class="ttname"><a href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">list_fini</a></div><div class="ttdeci">void list_fini(list *)</div><div class="ttdef"><b>Definition:</b> list.h:90</div></div>
-<div class="ttc" id="alist_8h_html_af64dc2c4c46aa964cd89669c79a62596"><div class="ttname"><a href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">list_copy</a></div><div class="ttdeci">list list_copy(const list *)</div><div class="ttdef"><b>Definition:</b> list.h:76</div></div>
-<div class="ttc" id="alist_8h_html_abac51dd82a6b20fe61e62b4ee4830866"><div class="ttname"><a href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a></div><div class="ttdeci">list list_init(void)</div><div class="ttdef"><b>Definition:</b> list.h:66</div></div>
-<div class="ttc" id="alist_8h_html_a5d89b83da0c979c966fc65c80f072ce0"><div class="ttname"><a href="list_8h.html#a5d89b83da0c979c966fc65c80f072ce0">list_append</a></div><div class="ttdeci">#define list_append(qwerty_x_list_l_abcd, qwerty_x_data_l_abcd)</div><div class="ttdef"><b>Definition:</b> list.h:43</div></div>
+<div class="ttc" id="astructlist_html_ac23ef99fe784d5cc399c3daf54fb6932"><div class="ttname"><a href="structlist.html#ac23ef99fe784d5cc399c3daf54fb6932">list::tail</a></div><div class="ttdeci">struct d_node * tail</div><div class="ttdef"><b>Definition:</b> list.h:25</div></div>
+<div class="ttc" id="alist_8h_html_a7bdcd7943db9bd4ae61b6c462d1b76c7"><div class="ttname"><a href="list_8h.html#a7bdcd7943db9bd4ae61b6c462d1b76c7">list_fini</a></div><div class="ttdeci">void list_fini(list *)</div><div class="ttdef"><b>Definition:</b> list.h:86</div></div>
+<div class="ttc" id="alist_8h_html_af64dc2c4c46aa964cd89669c79a62596"><div class="ttname"><a href="list_8h.html#af64dc2c4c46aa964cd89669c79a62596">list_copy</a></div><div class="ttdeci">list list_copy(const list *)</div><div class="ttdef"><b>Definition:</b> list.h:72</div></div>
+<div class="ttc" id="alist_8h_html_abac51dd82a6b20fe61e62b4ee4830866"><div class="ttname"><a href="list_8h.html#abac51dd82a6b20fe61e62b4ee4830866">list_init</a></div><div class="ttdeci">list list_init(void)</div><div class="ttdef"><b>Definition:</b> list.h:63</div></div>
+<div class="ttc" id="alist_8h_html_a5d89b83da0c979c966fc65c80f072ce0"><div class="ttname"><a href="list_8h.html#a5d89b83da0c979c966fc65c80f072ce0">list_append</a></div><div class="ttdeci">#define list_append(qwerty_x_list_l_abcd, qwerty_x_data_l_abcd)</div><div class="ttdef"><b>Definition:</b> list.h:41</div></div>
 <div class="ttc" id="ad__node_8h_html"><div class="ttname"><a href="d__node_8h.html">d_node.h</a></div></div>
 <div class="ttc" id="astructlist_html"><div class="ttname"><a href="structlist.html">list</a></div><div class="ttdoc">Doubly linked list structure &amp; functionality.</div><div class="ttdef"><b>Definition:</b> list.h:19</div></div>
 <!-- start footer part -->

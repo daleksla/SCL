@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prev_13',['prev',['../structd__node.html#a060d22b4644eb628f38db447c84bd69f',1,'d_node']]]
+  ['next_18',['next',['../structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951',1,'d_node::next()'],['../structs__node.html#ac2237e21194d385a2f3d6bd5fdca8045',1,'s_node::next()']]]
 ];
