@@ -51,7 +51,7 @@ void string_fini(string*) ;
 string string_init(void)
 {
 	string str ;
-	str.data = malloc(1) ;
+	str.data = malloc(1) ; str.data[0] = '\0' ;
 	str.size = 0 ;
 	return str ;
 }
