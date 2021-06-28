@@ -35,6 +35,22 @@ vector vector_init(void) ;
   * @return copy of given vector **/
 vector vector_copy(const vector*) ;
 
+/** vector_append function, adds item of data to end of a vector data and resizes accordingly
+  * @param pointer to vector to append data to
+  * @param l-value (ie pre-initialised) item of data to add **/
+#define vector_append(qwerty_x_vec_l_abcd, qwerty_x_data_l_abcd) ({\
+	unsigned long bytes = sizeof(qwerty_x_data_l_abcd) ;\
+	/* then, allocate more memory accordingly, copy the data over, add new data, delete old location */\
+	void* newVecData = malloc(qwerty_x_vec_l_abcd->bytes+bytes) ;\
+	memset(newVecData, 0, qwerty_x_vec_l_abcd->bytes+bytes) ; /* there has to be a better alternative to avoid valgrinds message */\
+	memcpy(newVecData, qwerty_x_vec_l_abcd->data, qwerty_x_vec_l_abcd->bytes) ;\
+	free(qwerty_x_vec_l_abcd->data) ; /* delete the old bit of data */\
+	qwerty_x_vec_l_abcd->data = newVecData ; /* assign vector new memory location */\
+	((char*)qwerty_x_vec_l_abcd->data)[qwerty_x_vec_l_abcd->bytes] = qwerty_x_data_l_abcd ;\
+	qwerty_x_vec_l_abcd->bytes += bytes ;\
+	++qwerty_x_vec_l_abcd->size ;\
+})
+
 /** vector_fini function, frees data held by provided vector
   * @param pointer to vector **/
 void vector_fini(vector*) ;
@@ -64,22 +80,6 @@ vector vector_copy(const vector* cpVec)
 	return vec ;
 }
 
-/** vector_append function, adds item of data to end of a vector data and resizes accordingly
-  * @param pointer to vector to append data to
-  * @param l-value (ie pre-initialised) item of data to add **/
-#define c_vector_append(vec, item) ({\
-	unsigned long bytes = sizeof(item) ;\
-	/* then, allocate more memory accordingly, copy the data over, add new data, delete old location */\
-	void* newVecData = malloc(vec->bytes+bytes) ;\
-	memset(newVecData, 0, vec->bytes+bytes) ; /* there has to be a better alternative to avoid valgrinds message */\
-	memcpy(newVecData, vec->data, vec->bytes) ;\
-	free(vec->data) ; /* delete the old bit of data */\
-	vec->data = newVecData ; /* assign vector new memory location */\
-	((char*)vec->data)[vec->bytes] = item ;\
-	vec->bytes += bytes ;\
-	++vec->size ;\
-})
-
 void vector_fini(vector* vec)
 {
 	if(vec->data != NULL) 
@@ -95,4 +95,4 @@ void vector_fini(vector* vec)
 } // "C++"
 #endif // __cplusplus
 
-#endif // C_VECTOR_H
+#endif // VECTOR_H
