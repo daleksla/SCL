@@ -10,3 +10,6 @@ EXES = ./exes
 all: 
 	#testing vector
 	$(COMP) $(WARN) $(SOURCES)/vectorTest.c -o $(EXES)/vectorTest
+	
+	#testing list
+	$(COMP) $(WARN) $(SOURCES)/listTest.c -o $(EXES)/listTest
