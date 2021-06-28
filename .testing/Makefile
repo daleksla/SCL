@@ -13,3 +13,6 @@ all:
 	
 	#testing list
 	$(COMP) $(WARN) $(SOURCES)/listTest.c -o $(EXES)/listTest
+	
+	#testing string
+	$(COMP) $(WARN) $(SOURCES)/stringTest.c -o $(EXES)/stringTest
