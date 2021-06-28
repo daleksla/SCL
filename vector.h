@@ -28,7 +28,7 @@ typedef struct {
 
 /** vector_init function, initialises empty vector
   * @return initialised vector struct **/
-vector vector_init() ;
+vector vector_init(void) ;
 
 /** vector_copy function, copies contents of a given vector. 
   * @param const pointer to vector
@@ -39,7 +39,7 @@ vector vector_copy(const vector*) ;
   * @param pointer to vector **/
 void vector_fini(vector*) ;
 
-vector vector_init()
+vector vector_init(void)
 {
 	vector vec ;
 	vec.data = NULL ;
