@@ -20,8 +20,6 @@ typedef struct {
 	/** list struct, contains properties pertaining to doubly linked list **/
 	unsigned long size ; // amounts of items of data
 	
-	unsigned long bytes ; // amount of bytes allocated (needed for memory management of generic type)
-	
 	struct d_node* head ; // stores link to next node in linked list
 	
 	struct d_node* tail ; // stores link to previous node in linked list
@@ -56,7 +54,6 @@ list list_copy(const list*) ;
 		qwerty_x_list_l_abcd->tail = pNode ;\
 	}\
 	++qwerty_x_list_l_abcd->size ;\
-	qwerty_x_list_l_abcd->bytes += sizeof(d_node) ;\
 })
 
 /** list_fini function, frees data held by provided list
@@ -66,7 +63,6 @@ void list_fini(list*) ;
 list list_init(void)
 {
 	list myList ;
-	myList.bytes = 0 ;
 	myList.size = 0 ;
 	myList.head = NULL ;
 	myList.tail = NULL ;
@@ -99,7 +95,6 @@ void list_fini(list* i_list)
 			free(cur) ;
 			cur = next ;
 		}
-		i_list->bytes = 0 ;
 		i_list->size = 0 ;
 		i_list->head = NULL ;
 		i_list->tail = NULL ;
