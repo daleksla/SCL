@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_18',['next',['../structd__node.html#a45fb52a5c643a4a33b7a6d8e1a51d951',1,'d_node::next()'],['../structs__node.html#ac2237e21194d385a2f3d6bd5fdca8045',1,'s_node::next()']]]
+  ['head_21',['head',['../structfwd__list.html#a51152ca09ae16f225e30b408ddc209f1',1,'fwd_list::head()'],['../structlist.html#a8cdca478dbc97ab5a9e0fcf11b810031',1,'list::head()']]]
 ];

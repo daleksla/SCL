@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bytes_0',['bytes',['../structvector.html#acaadf4b752484a1212f5210a4fb8fcf0',1,'vector']]]
+  ['algorithms_2eh_0',['algorithms.h',['../algorithms_8h.html',1,'']]]
 ];

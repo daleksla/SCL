@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="string_8h.html#aa398dcdfed7c74035cb9472f46356ff0">   51</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="string_8h.html#aa398dcdfed7c74035cb9472f46356ff0">string_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">string</span> str ;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    str.<a class="code" href="structstring.html#a564b9699a5589f0c91d57aafa3266036">data</a> = malloc(1) ;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    str.<a class="code" href="structstring.html#a564b9699a5589f0c91d57aafa3266036">data</a> = malloc(1) ; str.<a class="code" href="structstring.html#a564b9699a5589f0c91d57aafa3266036">data</a>[0] = <span class="charliteral">&#39;\0&#39;</span> ;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    str.<a class="code" href="structstring.html#a734b10f3cb7500cdb7a1ed4e4d206adf">size</a> = 0 ;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> str ;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
